@@ -1,5 +1,6 @@
 
 import 'dart:io';
+import 'dart:math';
 
 import 'maindart2.dart';
 
@@ -34,13 +35,29 @@ void main (){
 // int c = 121;
 // showAnswer(a, b, c);
 
-print("введите ваше имя");
-dynamic name = stdin.readLineSync() ;
-print("введите ваш возраст");
-dynamic age = stdin.readLineSync() ;
-print("введите ваш адрес");
-dynamic address = stdin.readLineSync() ;
-print("ваше хобби");
-dynamic hobby = stdin.readLineSync() ;
-showInformation(name, age, address, hobby);
+// print("введите ваше имя:");
+// dynamic name = stdin.readLineSync() ;
+// print("введите ваш возраст:");
+// dynamic age = stdin.readLineSync() ;
+// print("введите ваш адрес:");
+// dynamic address = stdin.readLineSync() ;
+// print("ваше хобби:");
+// dynamic hobby = stdin.readLineSync() ;
+// print("мое имя:");
+// dynamic myName = stdin.readLineSync();
+// print("мой возраст:");
+// dynamic myAge = stdin.readLineSync();
+// print("мой адрес:");
+// dynamic myAddress = stdin.readLineSync();
+// print("мое хобби:");
+// dynamic myHobby = stdin.readLineSync();
+// showInformation(name, myName, age, myAge, address, myAddress, hobby, myHobby);
+  
+  print("загадайте число от 1 до 100");
+int randomNumber = Random().nextInt(100);
+var a = stdin.readLineSync(); 
+var attempts = 0; 
+int guess = 0;
+showNums(a, randomNumber, guess);
+
 }

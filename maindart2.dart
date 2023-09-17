@@ -94,9 +94,37 @@
 //   }
 // }
 
-showInformation(name, age, address, hobby){
-  print('ваше имя : $name');
-  print("ваш возраст : $age");
-  print("ваш адрес : $address");
-  print("ваше хобби : $hobby");
+// showInformation(name, myName, age, myAge, address, myAddress, hobby, myHobby){
+//   print('ваше имя : $name');
+//   print("ваш возраст : $age");
+//   print("ваш адрес : $address");
+//   print("ваше хобби : $hobby");
+
+//   if (name == myName){
+//     print("у нас одинакрвые имена одинаковые имена");
+//   }
+//   if (age == myAge){
+//     print("мы ровесники");
+//   }
+//   if (address == myAddress){
+//     print("мы соседи");
+//   }
+//   if (hobby == myHobby){
+//     print("у нас одинаковое хобби");
+//   }
+//   if (name == myName || age == myAge || address == myAddress || hobby == myHobby ){
+//     print("давай дружить");
+//   }
+// }
+
+showNums(a, randomNumber, guess){
+  if (a == randomNumber){
+    print("ура я угадал ваше число");
+  }
+  else if (a = randomNumber){
+  print("я не еще угадал ваше число");
+  }
+  while (true){
+    int guess = randomNumber;
+  }
 }
