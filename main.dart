@@ -1,3 +1,7 @@
+// import 'dart:io';
+// import 'dart:math';
+
+// import 'maindart2.dart';
 
 import 'dart:io';
 import 'dart:math';
@@ -5,59 +9,64 @@ import 'dart:math';
 import 'maindart2.dart';
 
 void main (){
-// List a = [1,2,3,4,5,6,];
-// print("введите первое число:");
-// var b = int.parse(stdin.readLineSync() ?? '0');
-// print("введите последнее число:");
-// var c  = int.parse(stdin.readLineSync() ?? '0');
-// showNum(a, b, c);
+// List a = []; 
+// for (int i = 0; i <= 10; i++){
+// a.add(i);
+// }
+// // a.forEach((element) {print(element + element);});
+// int sum = a.reduce((value, element) => value + element);
+// print("сумма всех элементов : $sum");
 
-// int a = 123;
-// List b = a.toString().split("").map(int.parse).toList() ;
-// showNum(a, b);
-// print(b.runtimeType);
+// List<String> a = ['яблоко','арбуз','дыня','груша'];
+// a.sort((a,b) => a.length.compareTo(b.length));
+// a.sort((a, b) => b.compareTo(a));
+// print(a);
 
-// int a = 123;
-// List b = a.toString().split("").map(int.parse).toList();
-// b[1] = 0;
-// replaceNum(a, b);
+// List a = [];
+// for (int i = 0; i <= 10; i++){
+// a.add(i);
+// }
+// var result = a.where((item){ return item % 2 == 0; }).toList();
+// print(result);
+
+// for (int i = 1; i <= 5; i++ ){
+//   print(i);
+// }
+
+// for (int i = 5; i >= 1; i-- ){
+//   print(i);
+// }
+
+// int a = 3;
+// for (int i = 1; i <= 10; i++){
+// int answer = a * i;
+//   print("$a * $i = $answer" );
+// }
+
+// int sum = 0;
+// for (int i = 100; i <= 200; i++){
+//   if (i % 17 == 0){
+//   sum += i;
+//   }
+// }
+//  print("сумма чисел равна : $sum ");
+
+// int n = 0;
+// while (n<14){
+// n++;
+// print(7 * n);
+// }
+
+// int n = 1;
+// int counter = 0;
+// while(counter<10){
+// counter++;
+// print(n);
+// n *= 2;
+// }
+
+// List a = [1,2,3,0,5,6,7,];
 
 
-// print("введите номер дня недели :");
-// var a = int.parse(stdin.readLineSync() ?? '0');
-// showWeekday(a);
-
-// String a = "Loading";
-// showStatus(a);
-
-// int a = 11;
-// int b = 11;
-// int c = 121;
-// showAnswer(a, b, c);
-
-// print("введите ваше имя:");
-// dynamic name = stdin.readLineSync() ;
-// print("введите ваш возраст:");
-// dynamic age = stdin.readLineSync() ;
-// print("введите ваш адрес:");
-// dynamic address = stdin.readLineSync() ;
-// print("ваше хобби:");
-// dynamic hobby = stdin.readLineSync() ;
-// print("мое имя:");
-// dynamic myName = stdin.readLineSync();
-// print("мой возраст:");
-// dynamic myAge = stdin.readLineSync();
-// print("мой адрес:");
-// dynamic myAddress = stdin.readLineSync();
-// print("мое хобби:");
-// dynamic myHobby = stdin.readLineSync();
-// showInformation(name, myName, age, myAge, address, myAddress, hobby, myHobby);
   
-  print("загадайте число от 1 до 100");
-int randomNumber = Random().nextInt(100);
-var a = stdin.readLineSync(); 
-var attempts = 0; 
-int guess = 0;
-showNums(a, randomNumber, guess);
-
 }
