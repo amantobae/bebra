@@ -65,8 +65,16 @@ void main (){
 // n *= 2;
 // }
 
-// List a = [1,2,3,0,5,6,7,];
-
+// String? a;
 
   
+}
+
+String? func(String? a) {
+  if (a == null) {
+    print("ошибка");
+    return null; // Возвращаем null, чтобы соответствовать объявленному типу String?
+  } else {
+    return a;
+  }
 }
