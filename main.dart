@@ -8,73 +8,84 @@ import 'dart:math';
 
 import 'maindart2.dart';
 
+
+
 void main (){
-// List a = []; 
-// for (int i = 0; i <= 10; i++){
-// a.add(i);
-// }
-// // a.forEach((element) {print(element + element);});
-// int sum = a.reduce((value, element) => value + element);
-// print("сумма всех элементов : $sum");
+// 1 task
+country countries  = country();
 
-// List<String> a = ['яблоко','арбуз','дыня','груша'];
-// a.sort((a,b) => a.length.compareTo(b.length));
-// a.sort((a, b) => b.compareTo(a));
-// print(a);
+// 2 task
+myCar car = myCar();
+String carInfo = car.getCarInfo();
+print(carInfo);
 
-// List a = [];
-// for (int i = 0; i <= 10; i++){
-// a.add(i);
-// }
-// var result = a.where((item){ return item % 2 == 0; }).toList();
-// print(result);
 
-// for (int i = 1; i <= 5; i++ ){
-//   print(i);
-// }
+// 1 метод
+print(countries.name);
+print(countries.climat);
+print(countries.description);
 
-// for (int i = 5; i >= 1; i-- ){
-//   print(i);
-// }
+// 2 метод
+String info = countries.getInfo();
+print(info);
 
-// int a = 3;
-// for (int i = 1; i <= 10; i++){
-// int answer = a * i;
-//   print("$a * $i = $answer" );
-// }
+// 3 task
+iphone12 phone12 = iphone12("iphone 12", 0770121212, 212);
+iphone13 phone13 = iphone13("iphone 13", 0770131313, 213);
+iphone14 phone14 = iphone14("iphone 14", 0770141414, 214);
 
-// int sum = 0;
-// for (int i = 100; i <= 200; i++){
-//   if (i % 17 == 0){
-//   sum += i;
-//   }
-// }
-//  print("сумма чисел равна : $sum ");
-
-// int n = 0;
-// while (n<14){
-// n++;
-// print(7 * n);
-// }
-
-// int n = 1;
-// int counter = 0;
-// while(counter<10){
-// counter++;
-// print(n);
-// n *= 2;
-// }
-
-// String? a;
-
-  
+print("first phone info : ${phone12.model}, ${phone12.number}, ${phone12.weight} grams");
+print("second phone info : ${phone13.model}, ${phone13.number}, ${phone13.weight} grams");
+print("third phone info : ${phone14.model}, ${phone14.number}, ${phone14.weight} grams");
 }
 
-String? func(String? a) {
-  if (a == null) {
-    print("ошибка");
-    return null; // Возвращаем null, чтобы соответствовать объявленному типу String?
-  } else {
-    return a;
+class myCar{
+  String carName = "nissan";
+  int horsepower = 500;
+  int price = 100000;
+  String color = "black";
+
+  String getCarInfo(){
+    return "название : $carName; мощность : $horsepower лошадинных сил; цена : $price; цвет : $color";
   }
+}
+
+class phone {
+  int weight ;
+  String model ;
+  int number;
+
+  phone(this.model, this.number, this.weight);
+}
+
+class iphone12 extends phone {
+  iphone12(
+  super.model,
+  super.number,
+  super.weight);
+}
+
+class iphone13 extends phone {
+  iphone13(
+  super.model,
+  super.number,
+  super.weight);
+}
+
+class iphone14 extends phone {
+  iphone14(
+  super.model,
+  super.number,
+  super.weight);
+}
+
+class country{
+String name ="Бразилия";
+String climat = "тропический";
+String description = "Бразилия – страна в Южной Америке";
+
+
+String getInfo(){
+return "название : $name ; климат : $climat ; описание : $description";
+}
 }
