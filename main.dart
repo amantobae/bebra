@@ -1,7 +1,3 @@
-// import 'dart:io';
-// import 'dart:math';
-
-// import 'maindart2.dart';
 
 import 'dart:io';
 import 'dart:math';
