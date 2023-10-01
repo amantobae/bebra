@@ -1,5 +1,5 @@
-// void main(){
-//   print("adsad");
+void main(){
+  print("adsad");
 //   car().startCar();
 // }
 
@@ -25,4 +25,4 @@
 //   startCar(){
 //     print("car started");
 //   }
-// }
+}
