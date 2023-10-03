@@ -1,92 +1,156 @@
 
+import 'dart:ffi';
+import 'dart:io';
 import 'dart:math';
 
-// // import 'maindart2.dart';
+import 'maindart2.dart';
 
 
 
 import 'dart:io';
 
-// void main(){
-
-
-
-// // 1 task
-// country countries  = country();
-
-// // 1 метод
-// print(countries.name);
-// print(countries.climat);
-// print(countries.description);
-
-// // 2 метод
-// String info = countries.getInfo();
-// print(info);
-
-// // 2 task
-// myCar car = myCar();
-// String carInfo = car.getCarInfo();
-// print(carInfo);
-
-
-
-// // 3 task
-// iphone12 phone12 = iphone12("iphone 12", 0770121212, 212);
-// iphone13 phone13 = iphone13("iphone 13", 0770131313, 213);
-// iphone14 phone14 = iphone14("iphone 14", 0770141414, 214);
-
-// print("first phone info : ${phone12.model}, ${phone12.number}, ${phone12.weight} grams");
-// print("second phone info : ${phone13.model}, ${phone13.number}, ${phone13.weight} grams");
-// print("third phone info : ${phone14.model}, ${phone14.number}, ${phone14.weight} grams");
+// Nikola nikola = Nikola(name: "Nikola", lastname: "Бабур");
+// print(nikola.name);
 // }
 
-// class myCar{
-//   String carName = "nissan";
-//   int horsepower = 500;
-//   int price = 100000;
-//   String color = "черный";
+// class Nikola {
+//   String lastname;
+//   String name;
 
-//   String getCarInfo(){
-//     return "название : $carName; мощность : $horsepower лошадинных сил; цена : $price; цвет : $color";
+//   Nikola({required this.name,  //конструктор
+//   required this.lastname
 //   }
+//   )
+//   {
+//   if(name != "Nikola"){
+//     this.name = "я не $name, а Nikola";
+//   }
+//   else {
+// this.name = name;
+//   }
+//   }
+  
+
+// Math math = Math();
+// int addition = math.addition();
+// print(addition);
+// int multiplication = math.multiplication();
+// print(multiplication);
+// num division = math.division();
+// print(division);
+// int subtraction = math.subtraction();
+// print(subtraction);
+
+
+// Car car = Car();
+// dynamic zapusk = car.zapusk();
+// print(zapusk);
+// dynamic otkluchenie = car.otkluchenie();
+// print(otkluchenie);
+// int getYear = car.getYear();
+// print(getYear);
+// String getColor = car.getColor();
+// print(getColor); 
+// String getType = car.getType();
+// print(getType);
 // }
 
-// class phone {
-//   int weight ;
-//   String model ;
-//   int number;
-
-//   phone(this.model, this.number, this.weight);
-// }
-
-// class iphone12 extends phone {
-//   iphone12(
-//   super.model,
-//   super.number,
-//   super.weight);
-// }
-
-// class iphone13 extends phone {
-//   iphone13(
-//   super.model,
-//   super.number,
-//   super.weight);
-// }
-
-// class iphone14 extends phone {
-//   iphone14(
-//   super.model,
-//   super.number,
-//   super.weight);
-// }
-
-// class country{
-// String name ="Бразилия";
-// String climat = "тропический";
-// String description = "Бразилия – страна в Южной Америке";
 
 
-// String getInfo(){
-// return "название : $name ; климат : $climat ; описание : $description";
-// }
-// }
+
+
+class Car{
+ String? color;
+ String? type;
+ int? year;
+
+Car({ this.color ,  this.type,  this.year});
+
+//1 метод
+String zapusk(){
+  return "автомобиль заведен";
+}
+
+//2 метод
+String otkluchenie(){
+  return "автомобиль заглушен";
+}
+
+//3 метод
+int getYear(){
+return year = 23;
+}
+
+//4 метод
+String getColor(){
+  return color = 'black';
+}
+//5 метод
+String getType(){
+  return type = "bus";
+}
+}
+void main(){
+TriangleChecker triangle = TriangleChecker(a: 21, b: 12, c: 12);
+triangle.is_triangle();
+}
+
+class TriangleChecker{
+  dynamic a ;
+  dynamic b ;
+  dynamic c ;
+
+  TriangleChecker({required this.a , required this.b , required this.c})
+
+  void is_triangle(){
+  if(a > 0 && b > 0 && c > 0 ){
+  if(a+b < c || b + c < a || a + c < b){
+    print("Ура, можно построить треугольник!");
+    }
+    else{
+    print("Жаль, но из этого треугольник не сделать.");
+  }
+  }
+  else if(a < 0 || b < 0 || c < 0){
+    print("С отрицательными числами ничего не выйдет!");
+  }
+  else if(a is! int || b is! int || c is ! int){
+    print("Нужно вводить только числа!");
+  }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Math{
+int a = 12;
+int b = 23;
+
+int addition(){
+  return a + b;
+}
+
+int multiplication(){
+  return a * b;
+}
+
+num division(){
+  return a / b;
+}
+int subtraction(){
+  return a - b;
+}
+}
