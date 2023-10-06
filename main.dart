@@ -2,14 +2,14 @@ import 'dart:io';
 import 'dart:math';
 
 void main() {
-  // User user = User(login: "", password: "", confirmPassword: "");
-  // print("введите логин");
-  // user.login = stdin.readLineSync() ?? '0';
-  // print("введите пароль");
-  // user.password = stdin.readLineSync() ?? '0';
-  // print("подтвердите пароль");
-  // user.confirmPassword = stdin.readLineSync() ?? '0';
-  // print(user.wrongOrCorrectLogin());
+  User user = User(login: "", password: "", confirmPassword: "");
+  print("введите логин");
+  user.login = stdin.readLineSync() ?? '0';
+  print("введите пароль");
+  user.password = stdin.readLineSync() ?? '0';
+  print("подтвердите пароль");
+  user.confirmPassword = stdin.readLineSync() ?? '0';
+  print(user.wrongOrCorrectLogin());
 
   Phone phone = Phone(number: 0772504603, model: "samsung a50");
   Phone1 phone1 = Phone1(number: 0, model: "");
