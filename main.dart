@@ -1,288 +1,215 @@
-
-import 'dart:ffi';
 import 'dart:io';
 import 'dart:math';
 
-import 'maindart2.dart';
+void main() {
+  // User user = User(login: "", password: "", confirmPassword: "");
+  // print("введите логин");
+  // user.login = stdin.readLineSync() ?? '0';
+  // print("введите пароль");
+  // user.password = stdin.readLineSync() ?? '0';
+  // print("подтвердите пароль");
+  // user.confirmPassword = stdin.readLineSync() ?? '0';
+  // print(user.wrongOrCorrectLogin());
 
+  Phone phone = Phone(number: 0772504603, model: "samsung a50");
+  Phone1 phone1 = Phone1(number: 0, model: "");
+  Phone2 phone2 = Phone2(number: 0, model: "");
+  Phone3 phone3 = Phone3(number: 0, model: "");
 
+  print(phone1.receiveCall("Бабургазы", 0555349504));
+  print(phone2.receiveCall("Руслан", 0554345054));
+  print(phone3.receiveCall("Папа", 0771833628));
 
-import 'dart:io';
+  print(phone1.getNumber(0755434544));
+  print(phone2.getNumber(0723545455));
+  print(phone3.getNumber(0754364544));
 
-void main(){
-Nikola nikola = Nikola(name: "Nikola", lastname: "Бабур");
-print(nikola.name);
+  print(phone.sendMessage(0778493293));
 
-TriangleChecker triangle = TriangleChecker(a: 2, b: 3, c: 6);
-triangle.is_triangle();
+  Reader reader = Reader(
+      fullName: "А. A. Курманалиев",
+      dateOfBirth: 07.09,
+      faculty: "Менеджмент",
+      numberOfLibraryCard: 34,
+      phoneNumber: 0770895638);
 
-print("введите слово");
-MyString mystring = MyString();
-print(mystring.reverse());
-print(mystring.ucFirst());
-
-
-
-
-Math math = Math();
-int addition = math.addition();
-print(addition);
-int multiplication = math.multiplication();
-print(multiplication);
-num division = math.division();
-print(division);
-int subtraction = math.subtraction();
-print(subtraction);
-
-
-Car car = Car();
-dynamic zapusk = car.zapusk();
-print(zapusk);
-dynamic otkluchenie = car.otkluchenie();
-print(otkluchenie);
-int getYear = car.getYear();
-print(getYear);
-String getColor = car.getColor();
-print(getColor); 
-String getType = car.getType();
-print(getType);
-
-
-Student student = Student(firstName: "Aman", avgMark: 5, group: 7, lastName: "Toktosunov");
-print(student.getScholarShip());
-Aspirant aspirant = Aspirant(firstName: "Aman", avgMark: 4, group: 7, lastName: "Toktosunov", scienceWork: true);
-print(aspirant.getScholarShip());
-
-
-Animal animal = Animal(food: "food", location: "location");
-
-Horse horse = Horse(food: "сено", location: "поля");
-print(horse.eat());
-print(horse.makeNoise());
-
-Cat cat = Cat(food: "молоко", location: "дом");
-print(cat.eat());
-print(cat.makeNoise());
-
-Dog dog = Dog(food: "мясо", location: "будка");
-print(dog.eat());
-print(dog.makeNoise());
+  print(reader.takeBook([
+    "А. П. Чехов. Вишневый сад",
+    "А. И. Островский. Гроза",
+    "Ф. И. Тютчев. Лирика",
+    "И. А. Гончаров. Обломов"
+  ]));
+  print(reader.returnBook([
+    "А. П. Чехов. Вишневый сад",
+    "А. И. Островский. Гроза",
+    "Ф. И. Тютчев. Лирика",
+    "И. А. Гончаров. Обломов"
+  ]));
+  print(reader.takeWhichBook([
+    "А. П. Чехов. Вишневый сад",
+    "А. И. Островский. Гроза",
+    "Ф. И. Тютчев. Лирика",
+    "И. А. Гончаров. Обломов"
+  ]));
 }
 
+class User {
+  String login;
+  String password;
+  String confirmPassword;
+  bool loginTrueOrfalse = false;
 
-class MyString{
-String userAnswer = stdin.readLineSync()??'0';
+  User(
+      {required this.login,
+      required this.password,
+      required this.confirmPassword});
 
-String ucFirst(){
- return userAnswer = userAnswer[0].toUpperCase() + userAnswer.substring(1);
-}
+  dynamic wrongOrCorrectLogin() {
+    while (loginTrueOrfalse != true) {
+      if (login.contains("@") ||
+          login.contains("@mail.ru") ||
+          login.contains("@gmail.com") && login.length <= 20) {
+        if (password == confirmPassword &&
+            password.contains('_') &&
+            password.length <= 20) {
+          print("вы успешно вошли в аккаунт!");
+          loginTrueOrfalse = true;
 
-String reverse(){
-  return userAnswer.split("").reversed.join("");
-}
-}
+          print("добро пожаловать $login, введите число от 1 до 100");
+          int input = int.parse(stdin.readLineSync() ?? "0");
+          bool isAnswer = false;
+          int counter = 0;
+          int max = 100;
+          int min = 0;
 
-class Nikola {
-  String lastname;
-  String name;
+          while (isAnswer != "yes") {
+            var random = Random().nextInt((max - min) + 1) + min;
 
-  Nikola({required this.name,  //конструктор
-  required this.lastname
-  }
-  )
-  {
-  if(name != "Nikola"){
-    this.name = "я не $name, а Nikola";
-  }
-  else {
-this.name = name;
-  }
-}
-  }
-  
-  
-
-
-
-
-
-
-class Car{
- String? color;
- String? type;
- int? year;
-
-Car({ this.color ,  this.type,  this.year});
-
-//1 метод
-String zapusk(){
-  return "автомобиль заведен";
-}
-
-//2 метод
-String otkluchenie(){
-  return "автомобиль заглушен";
-}
-
-//3 метод
-int getYear(){
-return year = 23;
-}
-
-//4 метод
-String getColor(){
-  return color = 'black';
-}
-//5 метод
-String getType(){
-  return type = "bus";
-}
-}
-
-class TriangleChecker{
-  dynamic a ;
-  dynamic b ;
-  dynamic c ;
-
-  TriangleChecker({required this.a , required this.b , required this.c});
-
-  void is_triangle(){
-  if(a > 0 && b > 0 && c > 0 ){
-  if(a+b < c){
-    print("Ура, можно построить треугольник!");
+            if (input == random) {
+              counter++;
+              print("ваше число $input было отгадано за $counter попыток");
+              isAnswer == true;
+              break;
+            } else {
+              print('ваше число $random');
+              String lessOrGreater = stdin.readLineSync()!;
+              if (lessOrGreater == "less") {
+                max = random - 1;
+                counter++;
+              } else if (lessOrGreater == "greater") {
+                min = random + 1;
+                counter++;
+              } else {
+                print('ответ неверный');
+              }
+            }
+          }
+        } else if (password.contains("?") ||
+            password.contains("@") ||
+            password.contains("%") ||
+            password.length >= 20 ||
+            password != confirmPassword) {
+          print("неправильный пароль");
+          break;
+        }
+      } else if (loginTrueOrfalse == false) {
+        print("неправильная почта");
+        break;
+      } else {
+        print("неправильно введеные данные");
+        break;
+      }
     }
-    else{
-    print("Жаль, но из этого треугольник не сделать.");
-  }
-  }
-  else if(a < 0 || b < 0 || c < 0){
-    print("С отрицательными числами ничего не выйдет!");
-  }
-  else if(a is! int || b is! int || c is ! int){
-    print("Нужно вводить только числа!");
-  }
   }
 }
 
-class Student{
-  String firstName;
-  String lastName;
-  int group;
-  double avgMark;
+class Phone {
+  int number;
+  int? weight;
+  String model;
 
-Student({required this.firstName, required this.avgMark, required this.group, required this.lastName, });
+  Phone({required this.number, this.weight, required this.model});
 
-dynamic getScholarShip(){
-  if (avgMark >= 5){
-    return "стипендия студента : 20000 сом";
+  String receiveCall(String caller, int callersNumber) {
+    return "звонит : $caller, номер : $callersNumber";
   }
-  else if(avgMark < 5){
-    return "стипендия студента : 0   сом";
+
+  int getNumber(callersNumber) {
+    return callersNumber;
+  }
+
+  String sendMessage(number) {
+    return "на номер $number будет отправлено сообщение";
   }
 }
-}
 
-
-
-class Aspirant extends Student{
-  bool scienceWork;
-  Aspirant({required super.firstName, required super.avgMark, required super.group, required super.lastName, required this.scienceWork});
+class Phone1 extends Phone {
+  Phone1({required super.number, super.weight, required super.model});
 
   @override
-  getScholarShip() {
-   if (avgMark >= 5){
-    return "стипендия аспиранта : 40000 сом";
-  }
-  else if(avgMark < 5){
-    return "стипендия аспиранта : 18000 сом";
-  }
-  }
-}
-
-
-class Animal {
-  String food;
-  String location;
-
-  Animal({required this.food, required this.location});
-
-  String sleep(){
-    return "животное спит";
-  }
-
-  String makeNoise(){
-    return "*звуки животного*";
-  }
-
-  String eat(){
-    return "*животное ест*";
-  }
-}
-
-class Horse extends Animal{
-  Horse({required super.food, required super.location});
-
-  @override
-  String makeNoise() {
-    return "*звуки лошади*";
+  String receiveCall(String caller, int callersNumber) {
+    return "звонит : $caller, номер : $callersNumber";
   }
 
   @override
-  String eat() {
-    return "*лошадь ест $food*";
+  int getNumber(callersNumber) {
+    return callersNumber;
   }
 }
 
-class Dog extends Animal{
-  Dog({required super.food, required super.location});
+class Phone2 extends Phone {
+  Phone2({required super.number, super.weight, required super.model});
 
   @override
-  String makeNoise() {
-    return "*гав*";
-  }
-
-  @override
-  String eat() {
-    return "*собака ест $food*";
-  }
-}
-
-class Cat extends Animal{
-  Cat({required super.food, required super.location});
-
-  @override
-  String makeNoise() {
-    return "*мяу*";
+  String receiveCall(String caller, int callersNumber) {
+    return "звонит : $caller, номер : $callersNumber";
   }
 
   @override
-  String eat() {
-    return "*кот пьет $food*";
+  int getNumber(callersNumber) {
+    return callersNumber;
   }
 }
 
+class Phone3 extends Phone {
+  Phone3({required super.number, super.weight, required super.model});
 
+  @override
+  String receiveCall(String caller, int callersNumber) {
+    return "звонит : $caller, номер : $callersNumber";
+  }
 
-
-
-
-
-class Math{
-int a = 12;
-int b = 23;
-
-int addition(){
-  return a + b;
+  @override
+  int getNumber(callersNumber) {
+    return callersNumber;
+  }
 }
 
-int multiplication(){
-  return a * b;
-}
+class Reader {
+  String fullName;
+  num dateOfBirth;
+  String faculty;
+  int numberOfLibraryCard;
+  int phoneNumber;
 
-num division(){
-  return a / b;
-}
-int subtraction(){
-  return a - b;
-}
+  Reader({
+    required this.fullName,
+    required this.dateOfBirth,
+    required this.faculty,
+    required this.numberOfLibraryCard,
+    required this.phoneNumber,
+  });
+
+  String takeBook(List books) {
+    return "студент $fullName взял ${books.length} книг";
+  }
+
+  String returnBook(List Books) {
+    return "студент $fullName отдал ${Books.length} книг";
+  }
+
+  String takeWhichBook(List books) {
+    String book = books.join(", ");
+    return "$fullName взял книги : $book";
+  }
 }
